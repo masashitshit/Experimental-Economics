@@ -1,0 +1,68 @@
+{% load otree_tags staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'global/matrix.css' %}" />
+
+<div class="instructions well well-lg">
+
+    <h3 class="panel-sub-heading">
+        Instructions
+    </h3>
+
+    <p>
+        ランダムかつ匿名の参加者とペアになり、ランダムに"player1"または"player2"の役が割り振られます。あなたは自分の役
+        を確認した後に、"A"もしくは"B"の決定を下します。
+    </p>
+
+    <p>
+      <strong>報酬はあなた自身のゲームでの獲得ポイントとあなたの属するチームの総獲得ポイント×2/3を合わせたものになります。</strong>
+    </p>
+
+    <p>
+
+    </p>
+    <p>
+        <strong>このゲームの結果は、実験終了後まで分かりません。</strong>
+    </p>
+
+    <p>
+        あなたも相手も独立かつ同時に自分の手を決定します。あなたの獲得ポイントは両者の選択の組み合わせにより、以下のように
+        決定されます。
+    </p>
+
+    <p>
+        <em>セル内の左の利得は"player2",右の利得は"player1"のものとなっています。</em>
+
+    </p>
+
+    <div class="row">
+        <div class="col-md-7 col-md-offset-2">
+            <table class="table table-hover">
+                <tr>
+                    <th colspan="2"></th>
+                    <th colspan="2">player1</th>
+                </tr>
+                <tr>
+                    <th colspan="2"></th>
+                    <th>A</th>
+                    <th>B</th>
+                </tr>
+                <tr>
+                    <th rowspan="2"><span class="rotate90">player2</span> </th>
+                    <th>A</th>
+                    <td>{{ Constants.A_player1_payoff }}, {{ Constants.A_player2_payoff }}</td>
+                    <td>{{ Constants.mismatch_payoff }}, {{ Constants.mismatch_payoff }} </td>
+                </tr>
+                <tr>
+                    <th>B</th>
+                    <td>{{ Constants.mismatch_payoff }}, {{ Constants.mismatch_payoff }}</td>
+                    <td>{{ Constants.B_player1_payoff }}, {{ Constants.B_player2_payoff }}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <p>
+         このinstructionsは、次以降のページでも表示され続けます。
+    </p>
+
+</div>

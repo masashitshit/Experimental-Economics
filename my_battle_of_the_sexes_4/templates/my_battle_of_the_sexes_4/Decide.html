@@ -1,0 +1,30 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Decide （{{ subsession.round_number }}/{{ Constants.num_rounds }}）
+{% endblock %}
+
+{% block content %}
+
+
+<p>
+    あなたは <strong>{{ player.role }}</strong>です。"A"と"B"どちらを選びますか？
+</p>
+
+<p>
+{% if player.role == "player2" %}
+    <strong>現在プレイ画面、及びプレイヤーの行動は相手のグループから監視されています。</strong>
+
+{% else %}
+    <strong>現在プレイ画面、及びプレイヤーの行動はあなたのグループから監視されています。</strong>
+
+{% endif %}
+</p>
+
+    {% formfield player.decision with label='Please make a choice:' %}
+    {% next_button %}
+
+    {% include Constants.instructions_template %}
+
+{% endblock %}

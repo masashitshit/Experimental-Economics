@@ -1,0 +1,33 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Results
+{% endblock %}
+
+{% block content %}
+<p>
+
+
+
+{% if player.role == "player1" %}
+
+    あなたは<strong>{{player.decision}}</strong>を選択し、"player2"は
+    <strong>{{player.other_player.decision}}</strong>を選択しました。よって、あなたの報酬は
+    <strong>{{player.payoff}}</strong>となります。
+
+{% else %}
+
+    あなたは <strong>{{player.decision}}</strong>を選択し、"player1"は
+    <strong>{{player.other_player.decision}}</strong>を選択しました。よって、あなたの報酬は
+    <strong>{{player.payoff}}</strong>となります。
+
+{% endif %}
+</p>
+
+
+    {% next_button %}
+
+    {% include Constants.instructions_template %}
+
+{% endblock %}

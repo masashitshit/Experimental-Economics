@@ -1,0 +1,37 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Introduction（１/４）
+{% endblock %}
+
+{% block content %}
+
+<p>
+    <big>これから"Battle of the sexes"ゲームを2回×4パターン行ってもらいます。</big>
+</p>
+
+<p>
+    あなたは2つのグループのどちらかに属することになります。
+    <em>報酬はあなた自身のゲームでの獲得ポイントとあなたの属するチームの総獲得ポイント×2/3を合わせたものになります。</em>
+</p>
+
+
+<p>
+    あなたは<strong></strong>です。
+    対戦する相手は<strong></strong>の2名です。
+</p>
+
+<p>
+    <strong>このゲームでは、対戦中の画面とプレーヤーの様子が自グループもしくは相手グループにより監視されます。</strong>
+</p>
+
+<p>
+    <strong>このゲームの結果は、実験終了後まで分かりません。</strong>
+</p>
+
+    {% include Constants.instructions_template %}
+
+    {% next_button %}
+
+{% endblock %}

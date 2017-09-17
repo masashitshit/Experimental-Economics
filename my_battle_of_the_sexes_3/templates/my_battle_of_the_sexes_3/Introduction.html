@@ -1,0 +1,37 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Introduction（３/４）
+{% endblock %}
+
+{% block content %}
+
+<p>
+
+</p>
+
+<p>
+    あなたは2つのグループのどちらかに属することになります。
+    <em>報酬はあなた自身のゲームでの獲得ポイントとあなたの属するチームの総獲得ポイント×2/3を合わせたものになります。</em>
+</p>
+
+
+<p>
+    あなたは<strong></strong>です。
+    対戦する相手は<strong></strong>の方2名です。
+</p>
+
+<p>
+    <strong>このゲームでは、自グループもしくは相手グループにより監視されることはありません。</strong>
+</p>
+
+<p>
+    <strong>このゲームの結果は、1つのゲームが終わるとすぐに分かります。</strong>
+</p>
+
+    {% include Constants.instructions_template %}
+
+    {% next_button %}
+
+{% endblock %}

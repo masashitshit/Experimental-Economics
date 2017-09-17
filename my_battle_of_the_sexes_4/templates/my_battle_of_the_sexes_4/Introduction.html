@@ -1,0 +1,35 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Introduction（４/４）
+{% endblock %}
+
+{% block content %}
+
+
+
+<p>
+    あなたは2つのグループのどちらかに属することになります。
+    <strong>報酬はあなた自身のゲームでの獲得ポイントとなります。</strong>
+</p>
+
+
+<p>
+    あなたは<strong></strong>です。
+    対戦する相手は<strong></strong>の2名です。
+</p>
+
+<p>
+    <strong>このゲームでは、対戦中の画面とプレーヤーの様子が自グループもしくは相手グループにより監視されます。</strong>
+</p>
+
+<p>
+    <strong>このゲームの結果は、実験終了後まで分かりません。</strong>
+</p>
+
+    {% include Constants.instructions_template %}
+
+    {% next_button %}
+
+{% endblock %}
